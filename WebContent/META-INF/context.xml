@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reloadable="true">
+
+<Resource 
+
+name="jdbc/datasource" 
+auth="Container"
+type="javax.sql.DataSource"
+defaultAutoCommit="false"
+driverClassName="org.postgresql.Driver"
+
+url="jdbc:postgresql://localhost:5432/db_project_java?autoReconect=true"
+username="caixaki" 
+password="admin" 
+
+maxActive="50" 
+maxIdle="10"
+maxWait="10"
+initialSize="10"
+validationQuery="SELECT 'OK' "
+testWhileIdle="true"
+testOnBorrow="true"
+numTestsPerEvictionRun="5"
+timeBetweenEvictionRunsMillis="5000"
+minEvictableIdleTimeMillis="60000"
+antiJARLocking="false"
+antiResourceLocking="false"
+/>
+
+<!-- Classe do tomcat que está lendo esse arquivo é o org.apache.tomcat.dbcp.dbcp.PoolingDataSource -->
+<!-- POOL de conexões -->
+<!-- https://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html -->
+
+</Context>
