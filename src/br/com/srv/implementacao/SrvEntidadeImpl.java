@@ -29,8 +29,8 @@ public class SrvEntidadeImpl implements SrvEntidade, Serializable{
 	}
 
 	@Override
-	public boolean existeUsuario(String entidade_login) {
-		return repositoryEntidade.existeUsuario(entidade_login);
+	public boolean existeUsuario(String ent_login) {
+		return repositoryEntidade.existeUsuario(ent_login);
 	}
 
 }

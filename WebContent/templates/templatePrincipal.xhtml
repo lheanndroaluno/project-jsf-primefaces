@@ -9,8 +9,9 @@
 <sec:isAuthenticated>
 
 	<h:head>
+	
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title><ui:insert name="titulo">Acades</ui:insert></title>
+		<title><ui:insert name="titulo">Caixaki</ui:insert></title>
 
 		<h:outputScript name="primefaces.js" library="primefaces" id="jsPrime"/>
 		<h:outputScript name="jquery.js" library="primefaces/jquery" id="jsJquery"/>
@@ -29,75 +30,92 @@
 
 	<h:form id="formTemplate" prependId="false">
 		
-		<h:outputStylesheet name="estilo.css" library="css" id="cssStiloSistema"/>
+		<h:outputStylesheet name="estilo.css" library="css" id="cssStileSistema"/>
 		
 		<h:body>
 			
 			<script type="text/javascript" charset="UTF-8">
 
-				$.noConflict();/*Evita conflito de bibliotecas*/
+				$.noConflit();/*Evita conflito de bibliotecas*/
 				localeData_pt_br();
 				initTamplete();
 				ocultarMenu();
 
-				/*Bloqueia F5 em todas as páginas*/
+				/*Bloqueia F5 do teclado, para não atualizar e perder os dados, e isso para todas as páginas*/
 				$(document).keydown(function (e) {
 					if (e.which == 116) {
 						return 116;
 					}
-				})			
+				});			
 			</script>
 			
 			<!-- Inclui em todas as páginas -->
 			<ui:include src="/templates/barraProgresso.xhtml" />
 			
-			<div id="msgError" class="espacoMensagem">
-				<p:growl id="msg" showDetail="false" sticky="true" redisplay="true" 
-				autoUpdate="true" life="500"/>
+			<div id="msgError">
+			
+				<p:growl id="msg" showDetail="false" sticky="false" redisplay="true" autoUpdate="true" life="5000"/>
 				
-				<p:tooltip id="toolTipFocus" globalSelector="a,:input, :button" showEvent="focus" hideEvent="blur" />
+				<p:tooltip id="toolTipFocus" globalSelector="a, :input, :button" showEvent="focus" hideEvent="blur" />
 			
 			</div>
 			
 			<div id="container">
-				
+				<!-- topo da página -->
 				<div id="topo">
 				
 					<span style="position: absolute; left: 20px; top: 20px;" id="spanLogo">
-						<h:graphicImage library="images"  id="logoImg" styleClass="bordaImagem"/>
+					
+						<h:graphicImage library="images" name="logo.jpg"  id="logoImg" styleClass="bordaImagem" 
+						style="height: 50px; width: 150px;"/>
 					
 					</span>
 					
-					<span id="dadoslogin"> Usuário: #{entidadeBeanView.usuarioLogadoSecurity}
+					<span id="dadoslogin"> Usuário: #{entidadeBeanView.usuarioLogadoSecurity} 
+					
 						<br id="quebraUser"/>
+					
 						Último Login:
-						<h:outputLabel id="saidaUltimoAcesso" value="#{entidadeBeanView.ultimoAcesso}">
-							<f:convertDateTime locale="pt_BR" pattern="dd/MM/yyyy | HH:mm:ss" dateStyle="long" timeStyle="full"
-							timeZone="GMT-03:00"/>
-						</h:outputLabel>
-						<br id="quebraUltimoAcesso"/>
-						<a href="#" onclick="javascript:logout('#{request.contextPath}')">Sair</a>
-					</span>
 						
-					<span id="menuSistema" style="position: absolute; right: 30px; top: 55px; width: 20px;">
-						<a href="#" onclick="abrirMenupop();">
-							<h:graphicImage id="imaSetaBaixo" library="images" name="saindo.png" styleClass="bordaimagem"/>
+						<h:outputLabel id="saidaUltimoAcesso" value="#{entidadeBeanView.ultimoAcesso}">
+						
+							<f:convertDateTime locale="pt_BR" pattern="dd/MM/yyyy | HH:mm:ss" dateStyle="long" timeStyle="full" timeZone="GMT-03:00"/>
+							
+						</h:outputLabel>
+						
+						<br id="quebraUltimoAcesso"/>
+					
+						<a href="#" title="Sair do sistema" onclick="javascript:logout('#{request.contextPath}')">Sair</a>
+						
+					</span>
+					
+					<span id="menuSistema" style="position: absolute; right: 60px; top: 55px; width: 5px; height: 5px;">
+					
+						<a href="#" onclick="abrirMenupop()">
+							<h:graphicImage id="imasetabaixo" library="images" name="setaParabaixo.png" styleClass="bordaImagem"/>
 						</a>
+						
 					</span>
 				
 				</div>
 				
 				<!-- Menu -->
 				<div id="menu">
+				
 					<span id="iniciarmenu">
-						<h:graphicImage library="images" name="iconemenu.png" styleClass="bordaimagem" id="iconemenu">
+					
+						<h:graphicImage library="images" name="init.png" styleClass="bordaImagem" id="iconemenu">
 							Menu
 						</h:graphicImage>
+						
 					</span>
+					
 				</div>
 				
 				<div id="corpo" class="corpo">
+				
 					<ui:insert name="corpo"/>
+					
 				</div>
 				
 				
@@ -105,12 +123,14 @@
 				<div id="menupop">
 				
 					<sec:ifAnyGranted roles="MENSAGENS_ENVIAR_ACESSAR, ADMIN">
+					
 						<p:commandLink actionListener="#{mensagemBeanView.novo}" value="Enviar Mensagem" immediate="true"
 						style="display: block;" id="enviarMensagem" ajax="true" process="@this" onsuccess="PF('enviarMsgDialog').show();">
 						
-						<p:ajax immediate="true" listener="#{mensagemBeanView.novo}"/>
+							<p:ajax immediate="true" listener="#{mensagemBeanView.novo}"/>
 							
 						</p:commandLink>
+						
 					</sec:ifAnyGranted>
 
 					<a href="#" onclick="alterarSenhaDialog.show();"
@@ -118,10 +138,12 @@
 						
 						<span style="display: block" id="spanAlterarSenha">Alterar Senha</span>
 					</a>
+					
 				</div>
 				
 				<!-- Barra de Menu -->
 				<div id="barramenu">
+				
 					<p:tieredMenu id="menuEsquerdo" style="width: 185px; border: none; background: none; color: #000;">
 					
 						<sec:ifAnyGranted roles="CADASTRO_ACESSAR, ADMIN">
@@ -148,6 +170,7 @@
 						onclick="javascript:logout('#{request.contextPath}')"/>
 					
 					</p:tieredMenu>
+					
 				</div>
 			
 			</div>

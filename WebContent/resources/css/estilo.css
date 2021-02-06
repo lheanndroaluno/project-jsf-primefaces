@@ -3,27 +3,11 @@
 	padding: 0px;
 	font-size: 12px;
 	font-family: arial, helvetic, sans-serif;
+	
 }
 
-body {
-	background: #c0c0c0;
-}
-
-
-
-.bordaImagem{
-	border: 0px;
-}
-
-.img {
-	display: block;
-	margin-left: 20px;
-	margin-right: 20px;
-	margin-height: 20px;
-	padding: 5px;
-	width: 50px;
-	height: 50px;
-	background-position: center;
+body{
+	background-color: #C0C0C0;
 }
 
 .buttonPesquisa {
@@ -31,6 +15,13 @@ body {
 	width: 23px;
 	margin-left: 1px;
 	margin-right: 1px;
+}
+
+.estiloBotao{
+	height: 40px;
+	width: 100px;
+	background: #cdcdc1;
+	border: 1px;
 }
 
 .buttonAdiciona {
@@ -64,8 +55,14 @@ a:focus {
 
 .estiloSpan {
 	COLOR: red;
-	font-size: 20px;
-	font: 300;
+	font-size: 18px;
+	font-weight: bold;
+	border-left: 10px;
+}
+
+#imasetabaixo{
+	height: 20px;
+	width: 20px;
 }
 
 #topo {
@@ -73,27 +70,26 @@ a:focus {
 	top: 0px;
 	left: 0px;
 	right: 0px;
-	height: 100px;
-	background-color: #A9A9A9;
+	height: 80px;
+	background-color: #F7F6F5;
 }
 
+/*barra onde fica o nome menu*/
 #menu {
 	position: absolute;
-	top: 100px;
+	top: 80px;
 	left: 0px;
 	right: 0px;
-	height: 30px;
-	background-color: #00BFFF;
-	font: bold;
-	text-align: center;
+	height: 40px;
+	background-color: #778899;/*muda a cor da barra do menu*/
 }
 
 #menupop {
 	position: absolute;
 	border: 2px solid #61cded;
-	top: 82px;
+	top: 63px;
 	right: 25px;
-	height: 40px;
+	height: 30px;
 	width: 150px;
 	background-color: white;
 	-webkit-border-bottom-right-radius: 5px;
@@ -102,13 +98,11 @@ a:focus {
 	-moz-border-radius-bottomleft: 5px;
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
-	padding: 2px;
+	padding: 2px
 }
 
 #menupop a:hover {
-	background-color: #00BFFF;
-	font: monospace;	
-	font-weight: bold;
+	background-color: #e5e5e5;
 }
 
 #dialogo {
@@ -213,13 +207,13 @@ a:focus {
 }
 
 #iniciarmenu {
-	border: 1px solid gray;
-	background-color: white;
-	margin-top: 4px;
-	margin-left: 9px;
+	border: 5px solid gray;
+	background-color: #00BFFF;
+	margin-top: 1px;
+	margin-left: 15px;
 	padding: 3px 10px 6px 20px;
-	width: 68px;
-	height: 12px;
+	width: 70px;
+	height: 15px;
 	display: block;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -236,11 +230,12 @@ a:focus {
 	float: left;
 }
 
+/*barra onde tem os submenu*/
 #barramenu {
 	display: block;
-	background-color: #FFFAFA;
+	background-color: #778899;
 	position: absolute;
-	top: 130px;
+	top: 200px;
 	width: 200px;
 	bottom: 0px;
 	left: 0px;
@@ -251,9 +246,7 @@ a:focus {
 #imagemlogin {
 	position: absolute;
 	top: 30px;
-	right: 150px;
-	height: 150px;
-	width: 150px;
+	right: 60px;
 }
 
 #keyslogin {
@@ -282,31 +275,29 @@ a:focus {
 }
 
 #dadoslogin {
-	background: #61cded;
+	background: #836FFF;
 	background-image: -moz-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0));
+		rgba(255, 255, 255, 0) );
 	background-image: -webkit-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0));
+		rgba(255, 255, 255, 0) );
 	background-image: -o-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0));
+		rgba(255, 255, 255, 0) );
 	background-image: -ms-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0));
+		rgba(255, 255, 255, 0) );
 	background-image: linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0));
+		rgba(255, 255, 255, 0) );
 	position: absolute;
-	right: 20px;
-	top: 15px;
-	width: 255px;
-	height: 65px;
-	padding: 4px;
-	background-color: #DAA520;
-	-webkit-border-radius: 6px;
+	right: 40px;
+	top: 14px;
+	width: 240px;
+	padding: 5px;/*distancia o texto das bordas*/
+	background-color: #61c0e0;
+	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	-moz-box-shadow: 0 2px 0 rgba(0, 0, 0, .3);
 	-webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, .3);
 	box-shadow: 0 2px 0 rgba(0, 0, 0, .3);
-	font-size: 15px;
 }
 
 .ui-growl {
@@ -335,15 +326,15 @@ a:focus {
 	padding: 5px 5px 8px 10px;
 	background: #61cded;
 	background-image: -moz-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0));
+		rgba(255, 255, 255, 0) );
 	background-image: -webkit-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0));
+		rgba(255, 255, 255, 0) );
 	background-image: -o-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0));
+		rgba(255, 255, 255, 0) );
 	background-image: -ms-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0));
+		rgba(255, 255, 255, 0) );
 	background-image: linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0));
+		rgba(255, 255, 255, 0) );
 	-moz-box-shadow: 0 2px 0 rgba(0, 0, 0, .3);
 	-webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, .3);
 	box-shadow: 0 2px 0 rgba(0, 0, 0, .3);
@@ -385,7 +376,7 @@ input[type=submit] {
 	bottom: 2px;
 	right: 2px;
 	left: 2px;
-	top: 130px;
+	top: 112px;
 	position: absolute;
 	padding: 8px;
 }
@@ -414,6 +405,11 @@ input[type=submit] {
 	padding-left: 2px;
 }
 
+.bordaImagem {
+	border: 0;
+	width: 128px;
+	height: 128px;
+}
 
 .espacoBranco {
 	height: 10px;
@@ -429,14 +425,6 @@ input[type=submit] {
 
 .valorPesquisa {
 	width: 400px;
-}
-
-.imagem {
-	display: block;
-	margin-left: 0px;
-	margin-right: auto;
-	width: 200px;
-	height: 80px;
 }
 
 .estiloIdCastro {
@@ -464,7 +452,7 @@ a.ui-menuitem-link.ui-corner-all.ui-state-hover {
 	border-collapse: separate;
 }
 
-.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td {
+.ui-datatable thead th,.ui-datatable tbody td,.ui-datatable tfoot td {
 	-webkit-border-top-right-radius: 5px;
 	-webkit-border-bottom-right-radius: 5px;
 	-moz-border-radius-topright: 5px;
@@ -529,7 +517,7 @@ DESTE PONTO PARA BAIXO CSS QUE ALTERA GERAL O PRIMEFACES
 	height: 22px;
 }
 
-.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td {
+.ui-datatable thead th,.ui-datatable tbody td,.ui-datatable tfoot td {
 	padding: 2px 2px;
 	overflow: hidden;
 	border-width: 1px;
@@ -537,10 +525,8 @@ DESTE PONTO PARA BAIXO CSS QUE ALTERA GERAL O PRIMEFACES
 	border-color: white; /*cor das linha nos data table*/
 }
 
-.ui-paginator .ui-paginator-page, .ui-paginator .ui-paginator-pages,
-	.ui-paginator .ui-paginator-next, .ui-paginator .ui-paginator-last,
-	.ui-paginator .ui-paginator-first, .ui-paginator .ui-paginator-prev,
-	.ui-paginator .ui-paginator-current {
+.ui-paginator .ui-paginator-page,.ui-paginator .ui-paginator-pages,.ui-paginator .ui-paginator-next,.ui-paginator .ui-paginator-last,.ui-paginator .ui-paginator-first,.ui-paginator .ui-paginator-prev,.ui-paginator .ui-paginator-current
+	{
 	display: inline-block;
 	margin-right: 3px;
 	outline: medium none;
@@ -592,7 +578,7 @@ DESTE PONTO PARA BAIXO CSS QUE ALTERA GERAL O PRIMEFACES
 	text-indent: -9999999px;
 }
 
-.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield
+.ui-inputfield,.ui-widget-content .ui-inputfield,.ui-widget-header .ui-inputfield
 	{
 	background: #ffffff;
 	-moz-box-shadow: inset 0 1px 1px #8f8f8f;
@@ -601,7 +587,7 @@ DESTE PONTO PARA BAIXO CSS QUE ALTERA GERAL O PRIMEFACES
 	color: #000000;
 }
 
-.ui-fieldset, .ui-fieldset .ui-fieldset-legend {
+.ui-fieldset,.ui-fieldset .ui-fieldset-legend {
 	padding: 0.1em 1em;
 }
 
@@ -622,6 +608,6 @@ DESTE PONTO PARA BAIXO CSS QUE ALTERA GERAL O PRIMEFACES
 	display: none;
 }
 
-.ui-datatable thead th, .ui-datatable tbody td {
-	border: 1px solid white !important;
+.ui-datatable thead th,.ui-datatable tbody td {
+	border: 1px solid white !important; 
 }

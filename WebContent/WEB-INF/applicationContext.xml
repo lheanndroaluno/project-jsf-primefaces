@@ -52,7 +52,7 @@
 		class="org.springframework.jndi.JndiObjectFactoryBean"
 		lazy-init="false">
 		<property name="jndiName">
-			<value>java:comp/env/jdbc/datasource</value>
+			<value>java:/comp/env/jdbc/datasource</value>
 		</property>
 	</bean>
 

@@ -12,5 +12,5 @@ public interface SrvEntidade extends Serializable {
 
 	void updateUltimoAcessoUser(String login);
 
-	boolean existeUsuario(String entidade_login);
+	boolean existeUsuario(String ent_login);
 }

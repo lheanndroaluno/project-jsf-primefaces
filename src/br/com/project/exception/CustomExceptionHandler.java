@@ -37,7 +37,6 @@ public class CustomExceptionHandler extends ExceptionHandlerWrapper {
 	 */
 	@Override
 	public ExceptionHandler getWrapped() {
-
 		return wrapperd;
 	}
 
