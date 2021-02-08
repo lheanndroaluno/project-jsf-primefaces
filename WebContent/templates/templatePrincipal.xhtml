@@ -30,21 +30,21 @@
 
 	<h:form id="formTemplate" prependId="false">
 		
-		<h:outputStylesheet name="estilo.css" library="css" id="cssStileSistema"/>
+		<h:outputStylesheet name="estilo.css" library="css" id="cssStiloSistema"/>
 		
 		<h:body>
 			
 			<script type="text/javascript" charset="UTF-8">
 
-				$.noConflit();/*Evita conflito de bibliotecas*/
-				localeData_pt_br();
-				initTamplete();
+				$.noConflict;/*Evita conflito de bibliotecas jquery e primefaces*/
+				localeData_pt_br();/*transforma o calendar para o português*/
+				initTemplate();
 				ocultarMenu();
 
 				/*Bloqueia F5 do teclado, para não atualizar e perder os dados, e isso para todas as páginas*/
 				$(document).keydown(function (e) {
 					if (e.which == 116) {
-						return 116;
+						return false;/*mudei o retorno de 116 para false*/
 					}
 				});			
 			</script>
@@ -192,7 +192,7 @@
 			
 			<script type="text/javascript" charset="UTF-8">
 				carregarIdElementosPagina();
-				fecharMenupop();
+				abrirMenupop();
 			</script>
 		
 		</h:body>

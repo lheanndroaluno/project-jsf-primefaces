@@ -2,6 +2,7 @@ package br.com.project.geral.controller;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,9 +20,10 @@ public class EntidadeController extends ImplementacaoCrud<Entidade> implements I
 	@Autowired
 	private SrvEntidade srvEntidade;
 	
+	
 	public Entidade findUserLogado(String usuarioLogado) throws Exception {
-		return super.findUniqueByProperty(Entidade.class, usuarioLogado, "ent_login",
-				" and entity.ent_inativo is false");
+		return super.findUniqueByProperty(Entidade.class, usuarioLogado,
+				"ent_login", " and entity.ent_inativo is false ");
 	}
 	
 	public Date getUltimoAcessoEntidadeLogada(String login) {

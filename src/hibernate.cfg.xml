@@ -21,6 +21,7 @@
     	<property name="hibernate.use_sql_comments">false</property>
     	<property name="hibernate.connection.autocommit">false</property>
     	<property name="hibernate.connection.pool_size">50</property>
+    	<property name="hibernate.temp.use_jdbc_metadata_defaults">true</property>
     	
     	<!-- Classes mapeadas -->
     	<mapping class="br.com.project.model.classes.Entidade"/>

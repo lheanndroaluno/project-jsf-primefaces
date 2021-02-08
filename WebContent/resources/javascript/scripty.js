@@ -130,7 +130,7 @@ function validarSenhaLogin() {
 
 }
 
-function initTamplete() {
+function initTemplate() {
 $(document).ready(function() {
 	  $('#menupop').hide();
 	  $('#barramenu').hide();

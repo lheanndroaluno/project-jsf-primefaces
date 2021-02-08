@@ -18,7 +18,7 @@
 			<!-- usando jsp -->
 			<c:set var="isCadastro" value="true" scope="view" />
 
-			<p:panel header="Cadastro de Cidade" id="panelCadastro">
+			<p:fieldset legend="Cadastro de Cidade" id="panelCadastro" >
 
 				<h:panelGrid id="gridCidade" columns="3">
 
@@ -47,7 +47,7 @@
 
 				</h:panelGrid>
 
-			</p:panel>
+			</p:fieldset>
 
 			<p:commandButton value="Salvar" ajax="false"
 				action="#{cidadeBeanView.save()}" />
