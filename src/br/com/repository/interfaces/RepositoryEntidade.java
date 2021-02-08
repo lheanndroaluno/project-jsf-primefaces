@@ -6,6 +6,9 @@ import java.util.Date;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Essa classe é a mais próxima do banco de dados para realiar create, update, delete, insert
+ */
 @Repository
 @Transactional
 public interface RepositoryEntidade extends Serializable{

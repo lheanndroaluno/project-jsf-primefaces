@@ -161,7 +161,7 @@ $(document).ready(function() {
 	
 	function fecharMenupop() {
 	  if ($("#menupop").is(":visible")) {
-	  	$('#menupop').hide('slow');
+	  	$('#menupop').hide("slow");
 	  }
 	}
 

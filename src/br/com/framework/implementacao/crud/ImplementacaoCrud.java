@@ -240,7 +240,7 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 	public T findUniqueByQueryDinamic(String query) throws Exception {
 		validaSessionFactory();
 		
-		T obj = (T) sessionFactory.getCurrentSession().createQuery(query.toString()).uniqueResult();
+		T obj = (T) sessionFactory.getCurrentSession().createQuery(query.toString()).uniqueResult();//Retorna apenas um único resultado
 
 		return obj;
 	}

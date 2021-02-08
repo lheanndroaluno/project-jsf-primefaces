@@ -75,7 +75,7 @@
 					
 						<br id="quebraUser"/>
 					
-						Último Login:
+						Último Acesso:
 						
 						<h:outputLabel id="saidaUltimoAcesso" value="#{entidadeBeanView.ultimoAcesso}">
 						
@@ -89,10 +89,10 @@
 						
 					</span>
 					
-					<span id="menuSistema" style="position: absolute; right: 60px; top: 55px; width: 5px; height: 5px;">
+					<span id="menuSistema" style="position: absolute; right: 30px; top: 47px;">
 					
-						<a href="#" onclick="abrirMenupop()">
-							<h:graphicImage id="imasetabaixo" library="images" name="setaParabaixo.png" styleClass="bordaImagem"/>
+						<a href="#" onclick="abrirMenupop();">
+							<h:graphicImage id="imasetabaixo" library="images" name="icon-down.png" styleClass="bordaImagem"/>
 						</a>
 						
 					</span>
@@ -112,6 +112,7 @@
 					
 				</div>
 				
+				<!-- corpo da páginas -->
 				<div id="corpo" class="corpo">
 				
 					<ui:insert name="corpo"/>
@@ -133,10 +134,10 @@
 						
 					</sec:ifAnyGranted>
 
-					<a href="#" onclick="alterarSenhaDialog.show();"
-						style="display: block;" id="alterarSenha"> 
+					<a href='#' onclick="alterarSenhaDialog.show();" style="display: block;" id="alterarSenha"> 
 						
 						<span style="display: block" id="spanAlterarSenha">Alterar Senha</span>
+						
 					</a>
 					
 				</div>
@@ -176,9 +177,8 @@
 			</div>
 			
 			<p:dialog widgetVar="alterarSenhaDialog" id="alterarSenhaDialog" width="240"
-				modal="true" resizable="false" height="170"
-				header="Alterar senha" appendToBody="false" dynamic="true">
-				
+				modal="true" resizable="false" height="170" header="Alterar senha" appendToBody="false" dynamic="true">
+				teste
 					
 			</p:dialog>
 			
@@ -189,15 +189,16 @@
 				
 				
 			</p:dialog>
+			
+			<script type="text/javascript" charset="UTF-8">
+				carregarIdElementosPagina();
+				fecharMenupop();
+			</script>
 		
 		</h:body>
 	
 	</h:form>
 	
-	<script type="text/javascript" charset="UTF-8">
-		carregarIdElementosPagina();
-	</script>
-
 </sec:isAuthenticated>
 
 </html>

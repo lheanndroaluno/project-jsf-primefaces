@@ -10,7 +10,7 @@ import br.com.project.model.classes.Entidade;
 import br.com.repository.interfaces.RepositoryEntidade;
 
 @Repository
-public class DaoEntidade extends ImplementacaoCrud<Entidade> implements RepositoryEntidade{
+public class DaoEntidade extends ImplementacaoCrud<Entidade> implements RepositoryEntidade {
 
 	private static final long serialVersionUID = 1L;
 
@@ -40,7 +40,7 @@ public class DaoEntidade extends ImplementacaoCrud<Entidade> implements Reposito
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append(" select count(1) >= 1 from entidade where ent_login = '").append(entidade_login)
 		.append("' ");
-		return super.getJdbcTemplate().queryForObject(stringBuilder.toString(), Boolean.class);//ele retorna tru ou false
+		return super.getJdbcTemplate().queryForObject(stringBuilder.toString(), Boolean.class);//ele retorna true ou false
 	}
 
 }

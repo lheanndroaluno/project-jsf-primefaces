@@ -63,7 +63,7 @@ public class LoginBeanView extends BeanManagedViewAbstract implements Serializab
 			usuarioLogadoSessao = httpServletRequest.getRemoteUser();
 		}
 		
-		if (usuarioLogadoSessao != null && usuarioLogadoSessao.isEmpty()) {
+		if (usuarioLogadoSessao != null && !usuarioLogadoSessao.isEmpty()) {
 			sessionController.invalidateSession(usuarioLogadoSessao);
 		}
 	}

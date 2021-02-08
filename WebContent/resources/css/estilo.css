@@ -61,8 +61,8 @@ a:focus {
 }
 
 #imasetabaixo{
-	height: 20px;
-	width: 20px;
+	height: 30px;
+	width: 30px;
 }
 
 #topo {
@@ -71,7 +71,12 @@ a:focus {
 	left: 0px;
 	right: 0px;
 	height: 80px;
-	background-color: #F7F6F5;
+	background-color: #B0E0E6;/*muda a cor do background do topo*/
+}
+
+#iconemenu{
+	height: 25px;
+	width: 30px;
 }
 
 /*barra onde fica o nome menu*/
@@ -80,17 +85,20 @@ a:focus {
 	top: 80px;
 	left: 0px;
 	right: 0px;
-	height: 40px;
+	height: 45px;
 	background-color: #778899;/*muda a cor da barra do menu*/
 }
 
+/*menu da seta de trocar a senha*/
 #menupop {
 	position: absolute;
 	border: 2px solid #61cded;
-	top: 63px;
-	right: 25px;
-	height: 30px;
+	top: 68px;
+	right: 45px;/*aqui muda a posiçao para a esquerda*/
+	height: 50px;
 	width: 150px;
+	padding: 10px;
+	font-weight: bold;
 	background-color: white;
 	-webkit-border-bottom-right-radius: 5px;
 	-webkit-border-bottom-left-radius: 5px;
@@ -101,9 +109,116 @@ a:focus {
 	padding: 2px
 }
 
+/*muda o css dos campos do menupop*/
 #menupop a:hover {
-	background-color: #e5e5e5;
+	background-color: #87CEFA;
+	border-radius: 5px;
+	padding: 5px;
 }
+
+#labelNomeMenu{
+	border-top: 5px;
+	text-align: center;
+}
+
+#iniciarmenu {
+	border: 2px solid gray;
+	background-color: #00BFFF;
+	margin-top: 5px;
+	margin-left: 15px;
+	padding: 3px 10px 6px 20px;
+	width: 80px;
+	height: 20px;
+	display: block;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-face: sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	cursor: pointer;
+	box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.20);
+}
+
+#iniciarmenu #imageminiciarmenu {
+	margin-left: -14px;
+	display: inline-block;
+	float: left;
+}
+
+/*barra onde tem os submenu*/
+#barramenu {
+	display: block;
+	border: 2px solid #4169E1;
+	background-color: #778899;
+	position: absolute;
+	top: 125px;
+	width: 200px;
+	bottom: 0px;
+	left: 0px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+#imagemlogin {
+	position: absolute;
+	top: 30px;
+	right: 60px;
+}
+
+#keyslogin {
+	position: absolute;
+	bottom: 35px;
+	right: 300px;
+	z-index: 999;
+}
+
+#formlogin {
+	position: absolute;
+	bottom: 60px;
+	right: 60px;
+	left: 0px;
+	background-color: #4682B4;
+	display: block;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	padding-top: 30px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+
+/*O css onde fica os dados do login*/
+#dadoslogin {
+	font-weight: bold;
+	background: #836FFF;
+	background-image: -moz-linear-gradient(rgba(255, 255, 255, .3),
+		rgba(255, 255, 255, 0) );
+	background-image: -webkit-linear-gradient(rgba(255, 255, 255, .3),
+		rgba(255, 255, 255, 0) );
+	background-image: -o-linear-gradient(rgba(255, 255, 255, .3),
+		rgba(255, 255, 255, 0) );
+	background-image: -ms-linear-gradient(rgba(255, 255, 255, .3),
+		rgba(255, 255, 255, 0) );
+	background-image: linear-gradient(rgba(255, 255, 255, .3),
+		rgba(255, 255, 255, 0) );
+	position: absolute;
+	right: 25px;
+	top: 8px;
+	width: 270px;
+	padding: 8px;/*distancia o texto das bordas*/
+	background-color: #61c0e0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px solid #836FFF;
+	border-radius: 8px;
+	-moz-box-shadow: 0 5px 0 rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, .5);
+	box-shadow: 0 3px 0 rgba(0, 0, 0, .5);
+}
+
 
 #dialogo {
 	position: absolute;
@@ -206,99 +321,6 @@ a:focus {
 	padding: 5px;
 }
 
-#iniciarmenu {
-	border: 5px solid gray;
-	background-color: #00BFFF;
-	margin-top: 1px;
-	margin-left: 15px;
-	padding: 3px 10px 6px 20px;
-	width: 70px;
-	height: 15px;
-	display: block;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	font-face: sans-serif;
-	font-size: 13px;
-	cursor: pointer;
-	box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
-}
-
-#iniciarmenu #imageminiciarmenu {
-	margin-left: -14px;
-	display: inline-block;
-	float: left;
-}
-
-/*barra onde tem os submenu*/
-#barramenu {
-	display: block;
-	background-color: #778899;
-	position: absolute;
-	top: 200px;
-	width: 200px;
-	bottom: 0px;
-	left: 0px;
-	padding-top: 5px;
-	padding-left: 5px;
-}
-
-#imagemlogin {
-	position: absolute;
-	top: 30px;
-	right: 60px;
-}
-
-#keyslogin {
-	position: absolute;
-	bottom: 35px;
-	right: 300px;
-	z-index: 999;
-}
-
-#formlogin {
-	position: absolute;
-	bottom: 60px;
-	right: 60px;
-	left: 0px;
-	background-color: #e5e5e5;
-	display: block;
-	-webkit-border-top-right-radius: 8px;
-	-webkit-border-bottom-right-radius: 8px;
-	-moz-border-radius-topright: 8px;
-	-moz-border-radius-bottomright: 8px;
-	border-top-right-radius: 8px;
-	border-bottom-right-radius: 8px;
-	padding-top: 30px;
-	padding-right: 20px;
-	padding-bottom: 10px;
-}
-
-#dadoslogin {
-	background: #836FFF;
-	background-image: -moz-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0) );
-	background-image: -webkit-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0) );
-	background-image: -o-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0) );
-	background-image: -ms-linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0) );
-	background-image: linear-gradient(rgba(255, 255, 255, .3),
-		rgba(255, 255, 255, 0) );
-	position: absolute;
-	right: 40px;
-	top: 14px;
-	width: 240px;
-	padding: 5px;/*distancia o texto das bordas*/
-	background-color: #61c0e0;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-	-moz-box-shadow: 0 2px 0 rgba(0, 0, 0, .3);
-	-webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, .3);
-	box-shadow: 0 2px 0 rgba(0, 0, 0, .3);
-}
 
 .ui-growl {
 	position: fixed;
@@ -376,7 +398,7 @@ input[type=submit] {
 	bottom: 2px;
 	right: 2px;
 	left: 2px;
-	top: 112px;
+	top: 120px;
 	position: absolute;
 	padding: 8px;
 }

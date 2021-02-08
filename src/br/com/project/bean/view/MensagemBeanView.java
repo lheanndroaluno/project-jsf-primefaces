@@ -10,10 +10,10 @@ import br.com.project.bean.geral.BeanManagedViewAbstract;
 @Controller
 @Scope(value = "session")
 @ManagedBean(name = "mensagemBeanView")
-public class MensagemBeanView extends BeanManagedViewAbstract{
+public class MensagemBeanView extends BeanManagedViewAbstract {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Override
 	public String novo() throws Exception {
 		System.out.println("chamou o método novo bean mensagem");
