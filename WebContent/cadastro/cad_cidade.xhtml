@@ -63,7 +63,8 @@
 		<div class="espacoBranco"/>
 		
 		<!-- Tabela para mostrar os dados cadastrados no banco -->
-		<p:dataTable id="tableResult" value="#{cidadeBeanView.list}" var="objeto" emptyMessage="Não existe valores para exibição.">
+		<p:dataTable id="tableResult" value="#{cidadeBeanView.list}" var="objeto" emptyMessage="Não existe valores para exibição."
+		rendered="#{cidadeBeanView.list.size() > 0}" paginator="true" rows="5">
 		
 			<p:column>
 				<!-- html puro para centralizar os dados da coluna -->
@@ -95,7 +96,7 @@
 				<!-- html puro para centralizar os dados da coluna -->
 				<center>
 					<f:facet name="header">Editar</f:facet>
-					<p:commandLink id="editarCidade" action="#{cidadeBeanView.editar()}" value="Editar" 
+					<p:commandLink id="editarCidade" action="#{cidadeBeanView.editar}" value="Editar" 
 					ajax="false" immediate="true" update="@form :formCadastro">
 						<!-- value -> objeto que estar na tela -->
 						<f:setPropertyActionListener value="#{objeto}" target="#{cidadeBeanView.objetoSelecionado}" />
@@ -107,7 +108,7 @@
 				<!-- html puro para centralizar os dados da coluna -->
 				<center>
 					<f:facet name="header">Excluir</f:facet>
-					<p:commandLink id="excluirCidade" action="#{cidadeBeanView.excluir()}" value="Excluir" 
+					<p:commandLink id="excluirCidade" action="#{cidadeBeanView.excluir}" value="Excluir" 
 					ajax="false" immediate="true" update=":formCadastro :tableResult">
 						<!-- value -> objeto que estar na tela -->
 						<f:setPropertyActionListener value="#{objeto}" target="#{cidadeBeanView.objetoSelecionado}" />

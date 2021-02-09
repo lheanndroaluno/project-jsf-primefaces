@@ -93,7 +93,7 @@
 	
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
-		<param-value>delta</param-value>
+		<param-value>dark-hive</param-value>
 	</context-param>
 	
 	<filter>
