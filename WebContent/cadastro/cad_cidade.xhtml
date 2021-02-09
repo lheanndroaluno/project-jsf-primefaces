@@ -48,8 +48,11 @@
 			
 			<div class="espacoBranco"/>
 
-			<p:commandButton value="Salvar" ajax="false" action="#{cidadeBeanView.save()}" icon="ui-icon-disk" title="Salvar Registro"/>
-			<p:commandButton value="Novo" ajax="false" action="#{cidadeBeanView.novo()}" icon="ui-icon-plus" title="Novo Registro"/>
+			<p:commandButton id="btnSalvar" value="Salvar" ajax="false" action="#{cidadeBeanView.save()}" icon="ui-icon-disk" />
+			<p:tooltip for="btnSalvar" value="Salvar Registro" position="bottom"/>
+			
+			<p:commandButton id="btnNovo" value="Novo" ajax="false" action="#{cidadeBeanView.novo()}" icon="ui-icon-plus" title="Novo Registro"/>
+			<p:tooltip for="btnNovo" value="Novo Registro" position="bottom"/>
 
 		</h:form>
 		
@@ -66,73 +69,7 @@
 		<p:dataTable id="tableResult" value="#{cidadeBeanView.list}" var="objeto" emptyMessage="Não existe valores para exibição."
 		rendered="#{cidadeBeanView.list.size() > 0}" paginator="true" rows="5">
 		
-			<p:column style="width: 100px;">
-				<!-- html puro para centralizar os dados da coluna -->
-				<center>
-					<f:facet name="header">Código</f:facet>
-					<h:outputText value="#{objeto.cid_id}" />
-				</center>
-			</p:column>
-			
-			<p:column>
-				<!-- html puro para centralizar os dados da coluna -->
-				<center>
-					<f:facet name="header">Nome</f:facet>
-					<h:outputText value="#{objeto.cid_descricao}" />
-				</center>
-			</p:column>
-			
-			<p:column>
-				<!-- html puro para centralizar os dados da coluna -->
-				<center>
-					<f:facet name="header">Estado</f:facet>
-					<h:outputText value="#{objeto.estado.est_nome} - #{objeto.estado.est_uf}" />
-				</center>
-			</p:column>
-			
-			<!-- Colunas abaixo de editar e excluir -->
-			
-			<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-			
-			<sec:ifAnyGranted roles="CIDADE_EDITAR, ADMIN"><!-- Bloqueando o user para não editar, a não ser que ele tenha permissão -->
-			
-				<p:column style="font-weight: bold; width: 50px;">
-					<!-- html puro para centralizar os dados da coluna -->
-					<center>
-						<f:facet name="header">Editar</f:facet>
-						<p:commandLink id="editarCidade" action="#{cidadeBeanView.editar}" 
-						ajax="false" immediate="true" update="@form :formCadastro" oncomplete="addFocoAoCampo('cidadeNome');">
-							
-							<!-- colocando uma imagem com jsf -->
-							<h:graphicImage id="editarImg"  library="images" name="edit.png" style="width: 16px; height: 16px;" title="Editar"/>
-							
-							<!-- value -> objeto que estar na tela -->
-							<f:setPropertyActionListener value="#{objeto}" target="#{cidadeBeanView.objetoSelecionado}" />
-						</p:commandLink>
-					</center>
-				</p:column>
-			
-			</sec:ifAnyGranted>
-			
-			<p:column style="font-weight: bold; width: 50px;" >
-				<!-- html puro para centralizar os dados da coluna -->
-				<center>
-					<f:facet name="header">Excluir</f:facet>
-					<p:commandLink id="excluirCidade" action="#{cidadeBeanView.excluir}"  
-					ajax="false" immediate="true" update=":formCadastro :tableResult"
-					onclick="if(!confirm('Confirma a exlclusão da cidade : #{objeto.cid_descricao}?')) return false;">
-					
-					
-						<!-- colocando uma imagem com jsf -->
-						<h:graphicImage id="excluirImg"  library="images" name="excluir.png" style="width: 16px; height: 16px;" title="Excluir"/>
-						
-						<!-- value -> objeto que estar na tela -->
-						<f:setPropertyActionListener value="#{objeto}" target="#{cidadeBeanView.objetoSelecionado}" />
-					</p:commandLink>
-				</center>
-			</p:column>
-			
-			<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			<ui:include src="/resources/components/colunasDataTableCidade.xhtml" />
 		
 		</p:dataTable>
 		
