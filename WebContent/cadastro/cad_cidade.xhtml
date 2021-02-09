@@ -52,6 +52,62 @@
 			<p:commandButton value="Novo" ajax="false" action="#{cidadeBeanView.novo()}" title="Novo Registro"/>
 
 		</h:form>
+		
+		<!-- Tabela para mostrar os dados cadastrados no banco -->
+		<p:dataTable id="tableResult" value="#{cidadeBeanView.list}" var="objeto" emptyMessage="Não existe valores para exibição.">
+		
+			<p:column>
+				<!-- html puro para centralizar os dados da coluna -->
+				<center>
+					<f:facet name="header">Código</f:facet>
+					<h:outputText value="#{objeto.cid_id}" />
+				</center>
+			</p:column>
+			
+			<p:column>
+				<!-- html puro para centralizar os dados da coluna -->
+				<center>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{objeto.cid_descricao}" />
+				</center>
+			</p:column>
+			
+			<p:column>
+				<!-- html puro para centralizar os dados da coluna -->
+				<center>
+					<f:facet name="header">Estado</f:facet>
+					<h:outputText value="#{objeto.estado.est_nome} - #{objeto.estado.est_uf}" />
+				</center>
+			</p:column>
+			
+			<!-- Colunas abaixo de editar e excluir -->
+			
+			<p:column style="font-weight: bold;">
+				<!-- html puro para centralizar os dados da coluna -->
+				<center>
+					<f:facet name="header">Editar</f:facet>
+					<p:commandLink id="editarCidade" action="#{cidadeBeanView.editar()}" value="Editar" 
+					ajax="false" immediate="true" update="@form :formCadastro">
+						<!-- value -> objeto que estar na tela -->
+						<f:setPropertyActionListener value="#{objeto}" target="#{cidadeBeanView.objetoSelecionado}" />
+					</p:commandLink>
+				</center>
+			</p:column>
+			
+			<p:column style="font-weight: bold;">
+				<!-- html puro para centralizar os dados da coluna -->
+				<center>
+					<f:facet name="header">Excluir</f:facet>
+					<p:commandLink id="excluirCidade" action="#{cidadeBeanView.excluir()}" value="Excluir" 
+					ajax="false" immediate="true" update=":formCadastro :tableResult">
+						<!-- value -> objeto que estar na tela -->
+						<f:setPropertyActionListener value="#{objeto}" target="#{cidadeBeanView.objetoSelecionado}" />
+					</p:commandLink>
+				</center>
+			</p:column>
+		
+		
+		</p:dataTable>
 
 	</ui:define>
 

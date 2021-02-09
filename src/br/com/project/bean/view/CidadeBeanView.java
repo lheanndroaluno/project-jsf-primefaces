@@ -1,5 +1,8 @@
 package br.com.project.bean.view;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,22 +23,63 @@ public class CidadeBeanView extends BeanManagedViewAbstract {
 	private String url = "/cadastro/cad_cidade.jsf?faces-redirect=true";
 
 	private Cidade objetoSelecionado = new Cidade();
+	
+	private List<Cidade> list = new ArrayList<Cidade>();
 
 	@Autowired
 	private CidadeController cidadeController;
+	
+	/**
+	 * Método para pegar todas as cidades cadastradas no banco de dados
+	 * @returna uma lista de cidades
+	 * @throws Exception
+	 */
+	public List<Cidade> getList() throws Exception {
+		list = cidadeController.findList(Cidade.class);
+		return list;
+	}
 
+	/**
+	 * Método para salvar e editar os dados no banco
+	 * Merge -> salva e edita dados
+	 * return "" -> ele retorna para a mesma página
+	 */
 	public String save() throws Exception {
 		objetoSelecionado = cidadeController.merge(objetoSelecionado);
 		this.novo();
 		return "";
 	}
 
+	/**
+	 * Método para criar um novo objeto.
+	 * A url -> ele força a ir para a mesma página
+	 */
 	@Override
 	public String novo() throws Exception {
 		objetoSelecionado = new Cidade();
 		return url;
 	}
+	
+	/**
+	 * Método para editar um objeto, que no caso é cidade
+	 */
+	@Override
+	public String editar() throws Exception {
+		return url;
+	}
+	
+	/**
+	 * Método para excluir um objeto, que no caso é cidade
+	 */
+	@Override
+	public void excluir() throws Exception {
+		cidadeController.delete(objetoSelecionado);
+		this.novo();
+	}
 
+	
+	/*Getters e Setters*/
+	
 	public Cidade getObjetoSelecionado() {
 		return objetoSelecionado;
 	}
