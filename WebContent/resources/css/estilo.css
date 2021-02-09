@@ -633,3 +633,9 @@ DESTE PONTO PARA BAIXO CSS QUE ALTERA GERAL O PRIMEFACES
 .ui-datatable thead th,.ui-datatable tbody td {
 	border: 1px solid white !important; 
 }
+
+
+#editarImg{
+	width: 16px;
+	height: 16px;
+}
