@@ -47,10 +47,12 @@
 			</p:fieldset>
 			
 			<div class="espacoBranco"/>
-
+			
+			<!-- Se o user for ADMIN tem acesso, e se tiver acesso a CIDADE_NOVO -->
 			<util:botoesCrud managedBeanView="#{cidadeBeanView}" camposReload=":formTemplate:msg, :tableResult" 
 			botaoNovo="#{contextBean.possuiAcesso('CIDADE_NOVO', 'ADMIN')}"
-			notaoSalvar="#{contextBean.possuiAcesso('CIDADE_NOVO', 'ADMIN')}"><!-- Se o user for ADMIN tem acesso, e se tiver acesso a CIDADE_NOVO -->
+			botaoSalvar="#{contextBean.possuiAcesso('CIDADE_NOVO', 'ADMIN') and cidadeBeanView.objetoSelecionado.cid_id == null}"
+			botaoAtualizar="#{contextBean.possuiAcesso('ACESSO_EDITAR', 'ADMIN') and cidadeBeanView.objetoSelecionado.cid_id != null}">
 				
 			</util:botoesCrud>
 

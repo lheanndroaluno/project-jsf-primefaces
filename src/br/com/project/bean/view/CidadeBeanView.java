@@ -77,6 +77,12 @@ public class CidadeBeanView extends BeanManagedViewAbstract {
 		return url;
 	}
 	
+	@Override
+	public void saveEdit() throws Exception {
+		/*Faz algum processamento*/
+		this.saveNotReturn();
+	}
+	
 	/**
 	 * Método para excluir um objeto, que no caso é cidade
 	 */

@@ -11,7 +11,7 @@
 
 
 
-<p:column style="width: 100px;">
+<p:column style="width: 100px; height: 25px; font-weight: bold;">
 	<!-- html puro para centralizar os dados da coluna -->
 	<center>
 		<f:facet name="header">Código</f:facet>
@@ -19,7 +19,7 @@
 	</center>
 </p:column>
 
-<p:column>
+<p:column style="height: 25px; font-weight: bold;">
 	<!-- html puro para centralizar os dados da coluna -->
 	<center>
 		<f:facet name="header">Nome</f:facet>
@@ -27,7 +27,7 @@
 	</center>
 </p:column>
 
-<p:column>
+<p:column style="height: 25px; font-weight: bold;">
 	<!-- html puro para centralizar os dados da coluna -->
 	<center>
 		<f:facet name="header">Estado</f:facet>
@@ -56,7 +56,7 @@
 
 				<!-- colocando uma imagem com jsf -->
 				<h:graphicImage id="editarImg" library="images" name="edit.png"
-					style="width: 16px; height: 16px;" />
+					style="width: 20px; height: 20px;" />
 
 				<!-- value -> objeto que estar na tela -->
 				<f:setPropertyActionListener value="#{objeto}"
@@ -91,7 +91,7 @@
 
 						<!-- colocando uma imagem com jsf -->
 						<h:graphicImage id="excluirImg" library="images"
-							name="excluir.png" style="width: 16px; height: 16px;" />
+							name="excluir.png" style="width: 20px; height: 20px;" />
 
 						<!-- value -> objeto que estar na tela -->
 						<f:setPropertyActionListener value="#{objeto}"
@@ -111,7 +111,7 @@
 
 						<!-- colocando uma imagem com jsf -->
 						<h:graphicImage id="excluirImg" library="images"
-							name="excluir.png" style="width: 16px; height: 16px;" />
+							name="excluir.png" style="width: 20px; height: 20px;" />
 
 						<!-- value -> objeto que estar na tela -->
 						<f:setPropertyActionListener value="#{objeto}"
