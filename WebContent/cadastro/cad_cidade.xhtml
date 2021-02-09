@@ -46,12 +46,21 @@
 
 			</p:fieldset>
 			
-			<br />
+			<div class="espacoBranco"/>
 
 			<p:commandButton value="Salvar" ajax="false" action="#{cidadeBeanView.save()}" title="Salvar Registro"/>
 			<p:commandButton value="Novo" ajax="false" action="#{cidadeBeanView.novo()}" title="Novo Registro"/>
 
 		</h:form>
+		
+		<script type="text/javascript" charset="UTF-8">
+
+			addFocoAoCampo("cidadeNome");/*coloca o foco no campo nome da cidade, após a tela abrir.*/
+			gerenciaTeclaEnter();/*A tecla enter, fica com a mesma função da tecla tab.*/
+
+		</script>
+		
+		<div class="espacoBranco"/>
 		
 		<!-- Tabela para mostrar os dados cadastrados no banco -->
 		<p:dataTable id="tableResult" value="#{cidadeBeanView.list}" var="objeto" emptyMessage="Não existe valores para exibição.">
@@ -105,7 +114,6 @@
 					</p:commandLink>
 				</center>
 			</p:column>
-		
 		
 		</p:dataTable>
 
