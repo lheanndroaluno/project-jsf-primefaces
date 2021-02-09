@@ -52,7 +52,8 @@
 			<util:botoesCrud managedBeanView="#{cidadeBeanView}" camposReload=":formTemplate:msg, :tableResult" 
 			botaoNovo="#{contextBean.possuiAcesso('CIDADE_NOVO', 'ADMIN')}"
 			botaoSalvar="#{contextBean.possuiAcesso('CIDADE_NOVO', 'ADMIN') and cidadeBeanView.objetoSelecionado.cid_id == null}"
-			botaoAtualizar="#{contextBean.possuiAcesso('ACESSO_EDITAR', 'ADMIN') and cidadeBeanView.objetoSelecionado.cid_id != null}">
+			botaoAtualizar="#{contextBean.possuiAcesso('ACESSO_EDITAR', 'ADMIN') and cidadeBeanView.objetoSelecionado.cid_id != null}"
+			botaoExcluir="#{contextBean.possuiAcesso('ACESSO_EDITAR', 'ADMIN')}">
 				
 			</util:botoesCrud>
 

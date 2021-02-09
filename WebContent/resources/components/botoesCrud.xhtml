@@ -14,6 +14,7 @@
 		<composite:attribute name="botaoNovo" required="false" default="true"/>
 		<composite:attribute name="botaoSalvar" required="false" default="true"/>
 		<composite:attribute name="botaoAtualizar" required="false" default="true"/>
+		<composite:attribute name="botaoExcluir" required="false" default="true"/>
 		<composite:attribute name="camposReload" required="false"/>
 	</composite:interface> 
 	
@@ -36,11 +37,19 @@
 		
 		<!-- botão atualizar genérico -->
 		<p:commandButton id="btnAtualizar" value="Atualizar" action="#{cc.attrs.managedBeanView.saveEdit}" 
-		style="height: 40px; width: 100px; background: #FF0000; border: 2px solid #C0C0C0;" rendered="#{cc.attrs.botaoAtualizar}"
+		style="height: 40px; width: 100px; background: #8FBC8F; border: 2px solid #C0C0C0;" rendered="#{cc.attrs.botaoAtualizar}"
 		ajax="false" partialSubmit="true" process="@this, @form" immediate="false" update="#{cc.attrs.camposReload}">
 		
 		</p:commandButton>
 		<p:tooltip for="btnAtualizar" value="Atualizar Registro" position="bottom" />
+		
+		<!-- botão excluir genérico -->
+		<p:commandButton id="btnExcluir" value="Excluir" actionListener="#{cc.attrs.managedBeanView.excluir}" 
+		style="height: 40px; width: 100px; background: #FF0000; border: 2px solid #C0C0C0;" rendered="#{cc.attrs.botaoExcluir}"
+		ajax="false" immediate="false" update="#{cc.attrs.camposReload}">
+		
+		</p:commandButton>
+		<p:tooltip for="btnExcluir" value="Excluir Registro" position="bottom" />
 		
 	</composite:implementation>
 
