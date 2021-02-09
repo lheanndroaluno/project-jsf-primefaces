@@ -33,7 +33,7 @@ public class Cidade implements Serializable {
 	private Long cid_id;
 
 	@IdentificaCampoPesquisa(descricaoCampo = "Nome", campoConsulta = "cid_descricao", principal = 1)
-	@Column(nullable = false, length = 100)
+	@Column(nullable = false, length = 50)
 	private String cid_descricao;
 
 	@Basic
@@ -106,7 +106,7 @@ public class Cidade implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Cidade [cid_id=" + cid_id + ", cid_descricao=" + cid_descricao + "]";
+		return "Cidade [ cid_id = " + cid_id + ", cid_descricao = " + cid_descricao + " ]";
 	}
 
 }

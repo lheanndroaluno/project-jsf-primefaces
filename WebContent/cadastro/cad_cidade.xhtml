@@ -10,7 +10,7 @@
 
 
 <ui:composition template="/templates/templatePrincipal.xhtml">
-
+	<!-- Aqui fica todo o corpo da página -->
 	<ui:define name="corpo">
 
 		<h:form id="formCadastro" prependId="false">
@@ -23,36 +23,33 @@
 				<h:panelGrid id="gridCidade" columns="3">
 
 					<h:outputLabel for="id" value="Código: " id="labelId" />
-					<p:inputText id="id" styleClass="estiloIdCadastro" disabled="true"
-						value="#{cidadeBeanView.objetoSelecionado.cid_id}" />
+					<p:inputText id="id" styleClass="estiloIdCadastro" disabled="true" value="#{cidadeBeanView.objetoSelecionado.cid_id}" />
 					<h:outputLabel />
 
-					<h:outputLabel id="labelNomeConsultaCidade" for="cidadeNome"
-						value="Nome * :" />
-					<p:inputText id="cidadeNome" styleClass="estyleInputNome"
-						required="true" maxlength="100"
-						requiredMessage="Informe o campo nome da cidade" size="50"
+					<h:outputLabel id="labelNomeConsultaCidade" for="cidadeNome" value="Nome * : " />
+					<p:inputText id="cidadeNome" styleClass="estyleInputNome" required="true" maxlength="100"
+						requiredMessage="Informe o campo cidade" size="50"
 						value="#{cidadeBeanView.objetoSelecionado.cid_descricao}" />
 					<p:message for="cidadeNome" />
 
-					<h:outputLabel for="estado" id="labelEstado" value="Estado * :" />
+					<h:outputLabel for="estado" id="labelEstado" value="Estado * : " />
 					<p:selectOneMenu id="estado" required="true" style="width: 200px;"
-						requiredMessage="Informe o campo estado"
-						value="#{cidadeBeanView.objetoSelecionado.estado}">
+						requiredMessage="Informe o campo estado" value="#{cidadeBeanView.objetoSelecionado.estado}">
 
 						<f:selectItem itemLabel="Selecione um estado" itemValue="" />
 						<f:selectItems value="#{estadoBeanView.estados}" />
 
 					</p:selectOneMenu>
+					<p:message for="estado" />
 
 				</h:panelGrid>
 
 			</p:fieldset>
+			
+			<br />
 
-			<p:commandButton value="Salvar" ajax="false"
-				action="#{cidadeBeanView.save()}" />
-			<p:commandButton value="Novo" ajax="false"
-				action="#{cidadeBeanView.novo()}" />
+			<p:commandButton value="Salvar" ajax="false" action="#{cidadeBeanView.save()}" title="Salvar Registro"/>
+			<p:commandButton value="Novo" ajax="false" action="#{cidadeBeanView.novo()}" title="Novo Registro"/>
 
 		</h:form>
 

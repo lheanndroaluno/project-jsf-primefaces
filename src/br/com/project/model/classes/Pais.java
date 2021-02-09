@@ -16,7 +16,7 @@ import org.hibernate.envers.Audited;
 import br.com.project.annotation.IdentificaCampoPesquisa;
 
 @Audited
-@Entity
+@Entity // cria a tabela no banco de dados JSP
 @Table(name = "pais")
 @SequenceGenerator(name = "pais_seq", sequenceName = "pais_seq", initialValue = 1, allocationSize = 1)
 public class Pais implements Serializable {
@@ -32,7 +32,7 @@ public class Pais implements Serializable {
 	@Column(nullable = false, length = 80)
 	private String pai_nome;
 
-	@Column(nullable = false, length = 15)
+	@Column(nullable = false, length = 5)
 	private String pai_sigla;
 
 	@Version
@@ -71,7 +71,7 @@ public class Pais implements Serializable {
 		this.versionNum = versionNum;
 	}
 
-	//sempre criar o hashCode
+	// sempre criar o hashCode
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -96,7 +96,5 @@ public class Pais implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
 
 }

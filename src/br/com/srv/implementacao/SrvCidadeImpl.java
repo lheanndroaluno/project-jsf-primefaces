@@ -7,11 +7,11 @@ import br.com.repository.interfaces.RepositoryCidade;
 import br.com.srv.interfaces.SrvCidade;
 
 @Service
-public class SrvCidadeImpl implements SrvCidade{
+public class SrvCidadeImpl implements SrvCidade {
 
 	private static final long serialVersionUID = 1L;
-	
-	@Autowired//ou pode ser resource, qualquer uma funciona
+
+	@Autowired // ou pode ser resource, qualquer um funciona / isso é uma injeção de dependência
 	private RepositoryCidade repositoryCidade;
 
 }
