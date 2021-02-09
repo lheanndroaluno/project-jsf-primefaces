@@ -12,23 +12,30 @@
 	<composite:interface name="botoesCrud">
 		<composite:attribute name="managedBeanView" required="true" />
 		<composite:attribute name="botaoNovo" required="false" default="true"/>
+		<composite:attribute name="botaoSalvar" required="false" default="true"/>
 		<composite:attribute name="camposReload" required="false"/>
 	</composite:interface> 
 	
 	<composite:implementation>
-		<p:commandButton id="btnNovo" value="Novo" ajax="false" action="#{cidadeBeanView.novo()}"  
+		<!-- botão novo genérico -->
+		<p:commandButton id="btnNovo" value="Novo" action="#{cc.attrs.managedBeanView.novo}"  
 		style="height: 40px; width: 100px; background: #1E90FF; border: 2px solid #C0C0C0;" rendered="#{cc.attrs.botaoNovo}"
-		actionListener="#{cc.attrs.managedBeanView.novo}" immediate="true" update="#{cc.attrs.camposReload}">
-			
-			
+		ajax="false" immediate="true" update="#{cc.attrs.camposReload}">
 			
 		</p:commandButton>
 		<p:tooltip for="btnNovo" value="Novo Registro" position="bottom" />
+		
+		<!-- botão salvar genérico -->
+		<p:commandButton id="btnSalvar" value="Salvar" actionListener="#{cc.attrs.managedBeanView.saveNotReturn}" 
+		style="height: 40px; width: 100px; background: #20B2AA; border: 2px solid #C0C0C0;" rendered="#{cc.attrs.botaoSalvar}"
+		ajax="false" partialSubmit="true" process="@this, @form" immediate="false" update="#{cc.attrs.camposReload}">
+		
+		</p:commandButton>
+		<p:tooltip for="btnSalvar" value="Salvar Registro" position="bottom" />
 	</composite:implementation>
 
 
-<p:commandButton id="btnSalvar" value="Salvar" ajax="false" action="#{cidadeBeanView.save()}" icon="ui-icon-disk" />
-<p:tooltip for="btnSalvar" value="Salvar Registro" position="bottom" />
+
 
 
 
