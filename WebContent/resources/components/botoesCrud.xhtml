@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:util="http://java.sun.com/jsf/composite/components"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+	
+	<composite:interface name="botoesCrud">
+		<composite:attribute name="managedBeanView" required="true" />
+		<composite:attribute name="botaoNovo" required="false" default="true"/>
+	</composite:interface>
+	
+	<composite:implementation>
+		<p:commandButton id="btnNovo" value="Novo" ajax="false" action="#{cidadeBeanView.novo()}"  
+		style="height: 40px; width: 100px; background: #0000FF; border: 1px solid #C0C0C0;" rendered="#{cc.attrs.botaoNovo}"
+		actionListener="#{cc.attrs.managedBeanView.novo}" immediate="true">
+			
+			
+			
+		</p:commandButton>
+		<p:tooltip for="btnNovo" value="Novo Registro" position="bottom" />
+	</composite:implementation>
+
+
+<p:commandButton id="btnSalvar" value="Salvar" ajax="false" action="#{cidadeBeanView.save()}" icon="ui-icon-disk" />
+<p:tooltip for="btnSalvar" value="Salvar Registro" position="bottom" />
+
+
+
+
+
+
+</html>
