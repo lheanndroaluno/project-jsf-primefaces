@@ -12,12 +12,13 @@
 	<composite:interface name="botoesCrud">
 		<composite:attribute name="managedBeanView" required="true" />
 		<composite:attribute name="botaoNovo" required="false" default="true"/>
-	</composite:interface>
+		<composite:attribute name="camposReload" required="false"/>
+	</composite:interface> 
 	
 	<composite:implementation>
 		<p:commandButton id="btnNovo" value="Novo" ajax="false" action="#{cidadeBeanView.novo()}"  
-		style="height: 40px; width: 100px; background: #0000FF; border: 1px solid #C0C0C0;" rendered="#{cc.attrs.botaoNovo}"
-		actionListener="#{cc.attrs.managedBeanView.novo}" immediate="true">
+		style="height: 40px; width: 100px; background: #1E90FF; border: 2px solid #C0C0C0;" rendered="#{cc.attrs.botaoNovo}"
+		actionListener="#{cc.attrs.managedBeanView.novo}" immediate="true" update="#{cc.attrs.camposReload}">
 			
 			
 			

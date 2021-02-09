@@ -48,7 +48,8 @@
 			
 			<div class="espacoBranco"/>
 
-			<util:botoesCrud managedBeanView="#{cidadeBeanView}">
+			<util:botoesCrud managedBeanView="#{cidadeBeanView}" camposReload=":formTemplate:msg, :tableResult" 
+			botaoNovo="#{contextBean.possuiAcesso('CIDADE_NOVO', 'ADMIN')}"><!-- Se o user for ADMIN tem acesso, e se tiver acesso a CIDADE_NOVO -->
 				
 			</util:botoesCrud>
 
