@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import br.com.framework.interfac.crud.InterfaceCrud;
 import br.com.project.bean.geral.BeanManagedViewAbstract;
 
 @Controller
@@ -33,5 +34,6 @@ public class EntidadeBeanView extends BeanManagedViewAbstract implements Seriali
 	public Date getUltimoAcesso() throws Exception {
 		return contextBean.getEntidadeLogada().getEnt_ultimoAcesso();
 	}
+
 
 }

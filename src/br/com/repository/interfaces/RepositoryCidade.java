@@ -7,6 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Repository
-public interface RepositoryCidade extends Serializable{
+public interface RepositoryCidade extends Serializable {
 
 }
