@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 
 import br.com.framework.interfac.crud.InterfaceCrud;
 import br.com.project.bean.geral.BeanManagedViewAbstract;
+import br.com.project.geral.controller.EntidadeController;
+import br.com.project.model.classes.Entidade;
 
 @Controller
 @Scope(value = "session")
@@ -21,6 +23,9 @@ public class EntidadeBeanView extends BeanManagedViewAbstract implements Seriali
 
 	@Autowired
 	private ContextBean contextBean;
+	
+	@Autowired
+	private EntidadeController entidadeController;
 
 	/**
 	 * Retorna da classe ContextBean
@@ -33,6 +38,16 @@ public class EntidadeBeanView extends BeanManagedViewAbstract implements Seriali
 
 	public Date getUltimoAcesso() throws Exception {
 		return contextBean.getEntidadeLogada().getEnt_ultimoAcesso();
+	}
+
+	@Override
+	protected Class<Entidade> getClassImplement() {
+		return Entidade.class;
+	}
+
+	@Override
+	protected InterfaceCrud<Entidade> getController() {
+		return entidadeController;
 	}
 
 

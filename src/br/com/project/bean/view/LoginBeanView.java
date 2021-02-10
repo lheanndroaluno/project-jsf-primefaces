@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import br.com.framework.interfac.crud.InterfaceCrud;
 import br.com.project.bean.geral.BeanManagedViewAbstract;
 import br.com.project.geral.controller.SessionController;
 import br.com.srv.interfaces.SrvLogin;
@@ -88,6 +89,16 @@ public class LoginBeanView extends BeanManagedViewAbstract implements Serializab
 		}
 
 		requestContext.addCallbackParam("loggedIn", loggedIn);
+	}
+
+	@Override
+	protected Class<?> getClassImplement() {
+		return null;
+	}
+
+	@Override
+	protected InterfaceCrud<?> getController() {
+		return null;
 	}
 
 }
