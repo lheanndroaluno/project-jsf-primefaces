@@ -12,7 +12,14 @@
 <ui:composition template="/templates/templatePrincipal.xhtml">
 	<!-- Aqui fica todo o corpo da página -->
 	<ui:define name="corpo">
-
+		
+		<h:commandLink immediate="true">
+			<p:fileDownload value="#{cidadeBeanView.arquivoReport}"/>
+			<h:graphicImage id="imgPDF" library="images" name="imgPdf.png" />
+		</h:commandLink>
+		
+		<div class="espacoBranco"/>
+		
 		<h:form id="formCadastro" prependId="false">
 
 			<!-- usando jsp -->
